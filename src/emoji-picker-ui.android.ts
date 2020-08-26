@@ -1,6 +1,6 @@
 import { booleanConverter, CSSType, TextBase, WhiteSpace, whiteSpaceProperty } from "@nativescript/core/ui/text-base";
-import { EmojiLabel as EmojiLabelDefinition } from ".";
-import { EmojiPickerUi as EmojiPickerDefinition } from ".";
+import { EmojiLabelUI as EmojiLabelDefinition } from ".";
+import { EmojiPickerUI as EmojiPickerDefinition } from ".";
 import { EmojiLabelBase, EmojiPickerBase, textProperty } from "./emoji-picker-ui.common";
 export * from "@nativescript/core/ui/text-base";
 export * from "@nativescript/core/ui/text-field/text-field";
@@ -117,8 +117,14 @@ export class EmojiPickerUI extends EmojiPickerBase implements EmojiPickerDefinit
         super.initNativeView();
     }
 
-    public togglePopup(): void {
-        this.emojiPopup.toggle();
+    public togglePopup(){
+      return  this.emojiPopup.toggle();
+    }
+
+
+    public close() {
+        this.emojiPopup.dismiss();
+        return this.nativeView.getText()
     }
 
     public disposeNativeView(): void {

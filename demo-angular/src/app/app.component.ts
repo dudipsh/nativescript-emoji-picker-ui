@@ -1,4 +1,4 @@
-import { EmojiPickerUi } from 'nativescript-emoji-picker-ui';
+import { EmojiPickerUI } from 'nativescript-emoji-picker-ui';
 // console.log(new EmojiPickerUi());
 import { Component } from "@angular/core";
 

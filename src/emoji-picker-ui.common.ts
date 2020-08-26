@@ -1,7 +1,7 @@
 import { Property, View} from "@nativescript/core/ui/core/view";
 import { EditableTextBase } from "@nativescript/core/ui/editable-text-base/editable-text-base";
 import { TextBase } from "@nativescript/core/ui/text-base/text-base";
-import { EmojiLabel as EmojiLabelDefinition, EmojiPicker as EmojiPickerDefinition } from "./emoji-picker-ui";
+import { EmojiLabelUI as EmojiLabelDefinition, EmojiPickerUI as EmojiPickerDefinition } from "./emoji-picker-ui";
 
 declare const android: any;
 
@@ -13,9 +13,9 @@ export abstract class EmojiPickerBase extends EditableTextBase implements EmojiP
   public android: any;
   public emojiPopup;
   public setSecureAndKeyboardType(): void {  }
-  public togglePopup(): void {  }
+  public close(): any | string{};
+  public togglePopup() {  }
   public _onReturnPress(): void { }
-  public _configureEditText(editText: typeof android.widget.EditText): void {  }
 }
 
 export abstract class EmojiLabelBase extends TextBase implements EmojiLabelDefinition {
