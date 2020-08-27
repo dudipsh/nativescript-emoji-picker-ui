@@ -1,21 +1,23 @@
 import { Component , OnInit, ViewChild} from '@angular/core';
-import { EmojiPickerUI, EmojiLabelUI } from "nativescript-emoji-picker-ui";
+import { EmojiPickerUi, EmojiLabel } from "../../src";
 
 @Component({
     selector: "EmojiPickerUIComponent",
     template: `
         <StackLayout>
             <Button text="lala" (tap)="open()"></Button>
+            <ng-content>
+                
+            </ng-content>
                         <EmojiPickerUI #myEmojiPicker></EmojiPickerUI>
-<!--            <EmojiLabelUI #myEmojiLabel text="Have fun with the nativescript-emoji-picker😃"></EmojiLabelUI>-->
         </StackLayout>
 
     `
 })
 
 export class EmojiPickerUIComponent implements OnInit {
-    @ViewChild("myEmojiPicker", { static: false }) public myEmojiPicker: EmojiPickerUI;
-    @ViewChild("myEmojiLabel", { static: true }) public myEmojiLabel: EmojiLabelUI;
+    @ViewChild("myEmojiPicker", { static: false }) public myEmojiPicker: EmojiPickerUi;
+    @ViewChild("myEmojiLabel", { static: true }) public myEmojiLabel: EmojiLabel;
 
     open() {
         this.myEmojiPicker.nativeElement.togglePopup();
